@@ -55,10 +55,10 @@ Xn = Xn-1 + (1/2) * (F(Xn-1, t) + F(Xn, t)) * h
 
 ## Adicional
 Importante a la hora de cargar una función, debemos recordar que los nombres son en inglés:
-- Seno **(sin)**
-- Coseno **(cos)**
-- Tangente **(tan)**
-- Exponencial **(^)**
+- Seno: **(sin)**
+- Coseno: **(cos)**
+- Tangente: **(tan)**
+- Exponencial: **(^)**
 - Multiplicación: **(*)**
 
 Ejemplos:
