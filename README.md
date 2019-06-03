@@ -24,7 +24,7 @@ dx(t) / dt = f(x,t) en a <= t <= b
 ```
 *Con la condición inicial x(a) = xo*
 
-Desde el programa, se ingresa la **función** que se desea analiar, el parámetro **a**, **b**, y el **Xo**. A su vez, se define el valor de **n**, que es el intervalo por el cual a dividir.
+Desde el programa, se ingresa la **función** que se desea analiar, el parámetro **a**, **b**, y el **Xo**. A su vez, se define el valor de **n**, que es el intervalo por el cual a dividir. Por último, se ingresa el valor de **t**, el cual la función depende de cuando ingresemos la función.
 
 Generamos la separación entre los puntos a través de **h** que se obtiene de:
 ```
@@ -40,7 +40,7 @@ dx(t) / dt = f(x,t) en a <= t <= b
 ```
 *Con la condición inicial x(a) = xo*
 
-Desde el programa, se ingresa la **función** que se desea analiar, el parámetro **a**, **b**, y el **Xo**. A su vez, se define el valor de **n**, que es el intervalo por el cual a dividir.
+Desde el programa, se ingresa la **función** que se desea analiar, el parámetro **a**, **b**, y el **Xo**. A su vez, se define el valor de **n**, que es el intervalo por el cual a dividir. Por último, se ingresa el valor de **t**, el cual la función depende de cuando ingresemos la función.
 
 Generamos la separación entre los puntos a través de **h** que se obtiene de:
 ```
