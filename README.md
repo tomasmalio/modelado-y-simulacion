@@ -1,6 +1,8 @@
 # Modelado y Simulación
 ## Descripción
-Desarrollo de programa para gráficar el Método de Euler y Euler Mejorado ingresando una función y ciertos parámetros.
+Desarrollo de programa para:
+- **Método de Euler**, un procedimiento de integración numérica para resolver ecuaciones diferenciales ordinarias a partir de un valor inicial dado. Euler es el más simple de los métodos numéricos para resolver un problema de valor inicial.
+- **Método de Euler Mejorado**, es igual al método de euler, pero hace un refinamiento en la aproximación, tomando un promedio entre ciertas pendientes.
 
 ## Información
 **Profesor:** Fernando Acero
@@ -53,10 +55,10 @@ Xn = Xn-1 + (1/2) * (F(Xn-1, t) + F(Xn, t)) * h
 
 ## Adicional
 Importante a la hora de cargar una función, debemos recordar que los nombres son en inglés:
-- Seno **(sin)**
-- Coseno **(cos)**
-- Tangente **(tan)**
-- Exponencial **(^)**
+- Seno: **(sin)**
+- Coseno: **(cos)**
+- Tangente: **(tan)**
+- Exponencial: **(^)**
 - Multiplicación: **(*)**
 
 Ejemplos:
