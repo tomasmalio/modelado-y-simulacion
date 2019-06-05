@@ -73,7 +73,7 @@ public class Inicio extends JFrame
 	    cb.setVisible(true);
 	    panel.add(cb);
 	    
-		JLabel labelFunction = new JLabel("f(x,t)=");
+		JLabel labelFunction = new JLabel("f(x,k)=");
 		labelFunction.setAlignmentX(Container.LEFT_ALIGNMENT);
 		panel.add(labelFunction);
 		
@@ -113,7 +113,7 @@ public class Inicio extends JFrame
 		textFieldN.setAlignmentX(Container.LEFT_ALIGNMENT);
 		panel.add(textFieldN);
 		
-		JLabel labelT = new JLabel("t=");
+		JLabel labelT = new JLabel("k=");
 		labelT.setAlignmentX(Container.LEFT_ALIGNMENT);
 		panel.add(labelT);
 		
@@ -130,13 +130,12 @@ public class Inicio extends JFrame
 				// Seleccion del tipo método a utilizar
 				int model = cb.getSelectedIndex();
 				model++;
-				System.out.println("Seleccion"+model);
 				String function 	= textFieldFunction.getText();
 				double varA 		= Double.parseDouble(textFieldA.getText());
 				double varB 		= Double.parseDouble(textFieldB.getText());
 				double varXcero 	= Double.parseDouble(textFieldXcero.getText());
 				int varN 			= Integer.parseInt(textFieldN.getText());
-				int varT 			= Integer.parseInt(textFieldT.getText());
+				int varK 			= Integer.parseInt(textFieldT.getText());
 				
 				/**
 				 * Vamos a generar el gráfico correspondiente 
@@ -147,10 +146,10 @@ public class Inicio extends JFrame
 				 */
 				XYChart chart;
 				if (model == 1) {
-					Euler euler = new Euler(function, varA, varB, varXcero, varN, varT);
+					Euler euler = new Euler(function, varA, varB, varXcero, varN, varK);
 					chart = euler.initGui();
 				} else {
-					EulerMejorado eulerMejorado = new EulerMejorado(function, varA, varB, varXcero, varN, varT);
+					EulerMejorado eulerMejorado = new EulerMejorado(function, varA, varB, varXcero, varN, varK);
 					chart = eulerMejorado.initGui();
 				}
 				/**
@@ -166,8 +165,7 @@ public class Inicio extends JFrame
 				t.start();
             }
         } );
-	} 
-	
+	}
 	
 	public void cerrarVentana() {
 		dispose();

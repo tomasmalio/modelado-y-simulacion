@@ -15,15 +15,15 @@ public class Euler {
 	private double b;
 	private double x0;
 	private int n; 
-	private int t;
+	private int k;
 	
-	public Euler (String function, double varA, double varB, double varXo, int varN, int varT) {
-		fx = "f(x,t)=" + function;
+	public Euler (String function, double varA, double varB, double varXo, int varN, int varK) {
+		fx = "f(x,k)=" + function;
 		a = varA;
 		b = varB;
 		x0 = varXo;
 		n = varN; 
-		t = varT;
+		k = varK;
 	}
 	public XYChart initGui () {
 		
@@ -70,13 +70,13 @@ public class Euler {
 			for (int i = 1; i <= n; i++) {
 				
 				Argument newX = new Argument("x = " + nuevoA);
-				Argument newT = new Argument("t = "+ t);
+				Argument newK = new Argument("k = "+ k);
 				
-				Expression fxResult = new Expression("f(x,t)",function, newX, newT);
+				Expression fxResult = new Expression("f(x,k)",function, newX, newK);
 				/**
 				 * Xn = Xn-1 + YXn-1 * h
 				 */
-				Double result = Double.sum(yData[i -1], ((fxResult.calculate() * h)));
+				Double result = Double.sum(yData[i-1], ((fxResult.calculate() * h)));
 				nuevoA = nuevoA + h;
 				System.out.print("x "+ nuevoA);
 				System.out.println(" | y "+ result);
@@ -96,7 +96,7 @@ public class Euler {
 			/**
 			 * Separación entre los puntos
 			 */
-			double k = (b - a) / m;
+			double j = (b - a) / m;
 			
 			/**
 			 * Construimos dos array del formato double
@@ -110,7 +110,7 @@ public class Euler {
 			yDataNormal[0] = x0;
 			
 			/**
-			 * Recorremos m = 10.000 para poder ilustrar la función
+			 * Recorremos m = 10 0 para poder ilustrar la función
 			 * que queremos mostrar realmente.
 			 */
 			
@@ -119,34 +119,35 @@ public class Euler {
 			for (int i = 1; i < m; i++) {
 				
 				Argument newX = new Argument("x = " + xNormal);
-				Argument newT = new Argument("t = "+ t);
+				Argument newK = new Argument("k = "+ k);
 				
-				Expression fxResult = new Expression("f(x,t)",function, newX, newT);
+				Expression fxResult = new Expression("f(x,k)",function, newX, newK);
 				/**
 				 * Xn = Xn-1 + YXn-1 * k
 				 */
-				Double result = Double.sum(yDataNormal[i - 1], (fxResult.calculate() * k));
+				Double result = Double.sum(yDataNormal[i - 1], (fxResult.calculate() * j));
 				
-				xNormal = xNormal + k;
+				xNormal = xNormal + j;
 				xDataNormal[i] = xNormal;
 				yDataNormal[i] = result;
 				
 		    }
 			
 			XYChart chart = new XYChartBuilder().width(600).height(500).title("Modelado y Simulación").xAxisTitle("X").yAxisTitle("Y").build();
-			
+			/**
+		     * Funcion Método de Euler
+		     */
 			XYSeries series = chart.addSeries("Método de Euler", xData, yData);
 			series.setLineColor(XChartSeriesColors.BLUE);
 			series.setMarkerColor(Color.BLUE);
 		    series.setMarker(SeriesMarkers.CIRCLE);
 		    series.setLineStyle(SeriesLines.SOLID);
-		  
-		    
-		    XYSeries seriesNormal = chart.addSeries("Función Normal", xDataNormal, yDataNormal);
+		    /**
+		     * Funcion Real
+		     */
+		    XYSeries seriesNormal = chart.addSeries("Función Real", xDataNormal, yDataNormal);
 		    seriesNormal.setLineColor(XChartSeriesColors.RED);
 		    seriesNormal.setLineStyle(SeriesLines.SOLID);
-			
-		    
 		    
 			return chart;
 		} catch (Exception e) {
