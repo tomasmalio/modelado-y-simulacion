@@ -75,8 +75,8 @@ public class EulerMejorado {
 				Argument newXCorrector 	= new Argument("x = " + xCorrector);
 				Argument newK 			= new Argument("k = "+ k);
 				
-				Expression resultFxPredictor = new Expression("f(x,t)",function, newX, newK);
-				Expression resultFxCorrector = new Expression("f(x,t)",function, newXCorrector, newK);
+				Expression resultFxPredictor = new Expression("f(x,k)",function, newX, newK);
+				Expression resultFxCorrector = new Expression("f(x,k)",function, newXCorrector, newK);
 				/**
 				 * Xn = Xn-1 + (1/2) * (F(Xn-1, t) + F(Xn, t)) * h
 				 */
