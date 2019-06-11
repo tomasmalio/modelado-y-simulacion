@@ -34,11 +34,11 @@ h = (b - a) / n
 ```
 Recorremos hasta el **n** definido en los parámetros ingresados a través de la fórmula:
 ```
-Xn = Xn-1 + YXn-1 * h
+Xn = Xn-1 + F(Xn-1, k) * h
 ```
 ### Método de Euler Mejorado
 ```
-dx(t) / dt = f(x,t) en a <= t <= b
+dx(t) / dt = f(x,k) en a <= t <= b
 ```
 *Con la condición inicial x(a) = xo*
 
@@ -50,7 +50,7 @@ h = (b - a) / n
 ```
 Recorremos hasta el **n** definido en los parámetros ingresados a través de la fórmula:
 ```
-Xn = Xn-1 + (1/2) * (F(Xn-1, t) + F(Xn, t)) * h
+Xn = Xn-1 + (1/2) * (F(Xn-1, k) + F(Xn, k)) * h
 ```
 
 ## Adicional
@@ -62,4 +62,4 @@ Importante a la hora de cargar una función, debemos recordar que los nombres so
 - Multiplicación: **(*)**
 
 Ejemplos:
-- f(x,t)= sin(x^2)+t
+- f(x,k)= sin(x^2)+k
